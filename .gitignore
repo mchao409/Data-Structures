@@ -5,3 +5,6 @@ tmp/
 *.bak
 .metadata
 .settings/
+.classpath
+.project
+bin
