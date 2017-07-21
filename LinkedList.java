@@ -96,6 +96,53 @@ public class LinkedList<E> {
     return false;
   }
   
+  /**
+   * Returns the number of nodes in the LinkedList
+   */
+  public int size() {
+    Node n = head;
+    int count = 0;
+    while(n != null) {
+      count++;
+      n = n.next;
+    }
+    return count;
+  }
+  
+  /**
+   * Removes an element at the given index; returns the contents of the node removed
+   */
+  public E remove(int ind) {
+    Node n = head;
+    if(ind == 0) {
+      E obj = head.contents;
+      head = null;
+      return obj;
+    }
+    for(int i = 0; i < ind-1; i++) {
+      n = n.next;
+    }
+    Node after = n.next.next;
+    Node toReturn = n.next;
+    n.next = after;
+    return toReturn.contents;
+  }
+  
+  /**
+   * Removes the first node in the Linked List containing an object, returns
+   * true if a node is removed, false otherwise
+   */
+  public boolean remove(E obj) {
+    Node n = head;
+    while(n != null) {
+      if(n.getContents().equals(obj)) {
+        return true;
+      }
+      n = n.next;
+    }
+    return false;
+  }
+  
   public String toString() {
     String s = "[";
     Node h = head;
