@@ -128,5 +128,5 @@ public class LinkedListTest {
       list.remove(i);
       assertTrue(list.size() == i);
     }
-  }
+  } 
 }
